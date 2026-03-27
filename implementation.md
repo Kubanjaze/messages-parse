@@ -1,6 +1,6 @@
 # Phase 55 — messages.parse() Structured Compound Record
 
-**Version:** 1.1 | **Tier:** Standard | **Date:** 2026-03-26
+**Version:** 1.2 | **Tier:** Standard | **Date:** 2026-03-26
 
 ## Goal
 Demonstrate typed structured output using `client.beta.messages.parse()` (Anthropic beta SDK).
