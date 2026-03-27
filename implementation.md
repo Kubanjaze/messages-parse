@@ -25,6 +25,16 @@ Outputs: parsed_records.csv, parse_report.txt
 - activity_class: Literal["inactive", "weak", "moderate", "potent", "highly_potent"]
 - scaffold_family: Literal["benz", "naph", "ind", "quin", "pyr", "bzim", "other"]
 
+## Verification Checklist
+- [x] `client.beta.messages.parse()` called successfully
+- [x] Response contains `.content[0].parsed_output` with typed CompoundRecord
+- [x] All 5 compounds parsed with correct compound_name, pic50, scaffold_family, activity_class
+- [x] CSV and text report generated in output/
+
+## Risks (resolved)
+- SDK method name instability: `messages.parse` → `beta.messages.parse` discovered during build (3 API signature changes)
+- Pydantic Literal fields may reject unexpected model output — mitigated by coercion validators in schema
+
 ## Deviations from Plan
 - API is `client.beta.messages.parse()` not `client.messages.parse()`
 - Parameter is `output_format=` not `response_format=`
